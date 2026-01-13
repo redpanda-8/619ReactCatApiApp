@@ -1,13 +1,13 @@
 import React, { useContext, useMemo, useState } from "react";
-import { useCatApi } from "./services/catApi";
+import catApi from "./services/catApi";
 
 const AppContext = React.createContext();
 
-export const AppProvider = ({ children }) => {
+const AppProvider = ({ children }) => {
   const [selectedBreedId, setSelectedBreedId] = useState("");
   const [page, setPage] = useState(0);
 
-  const { breeds, images, isLoadingBreeds, isLoadingImages, error } = useCatApi({
+  const { breeds, images, isLoadingBreeds, isLoadingImages, error } = catApi({
     selectedBreedId,
     limit: 6,
     page,
@@ -37,7 +37,9 @@ export const AppProvider = ({ children }) => {
     [breeds, images, isLoadingBreeds, isLoadingImages, error, selectedBreedId]
   );
 
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+  return <AppContext value={value}>{children}</AppContext>;
 };
 
-export const useGlobalContext = () => useContext(AppContext);
+export const useGlobalContext = () => {
+  return useContext(AppContext)}
+export {AppContext, AppProvider};

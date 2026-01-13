@@ -40,3 +40,11 @@ cd cat-breed-search
 npm install
 npm i react-router-dom
 npm run dev
+
+
+Nepasiima API key → patikrink .env pavadinimą ir kad raktas yra VITE_CAT_API_KEY
+
+Po .env pakeitimų kartais reikia restart npm run dev
+
+Console rodo 401/403 → neteisingas raktas arba nepridėti headers (x-api-key)
+galiu duoti Routes variantą (pvz. / pasirinkimas, /breed/:id galerija)

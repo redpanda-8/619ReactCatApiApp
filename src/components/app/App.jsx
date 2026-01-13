@@ -1,15 +1,14 @@
-import {Routes, Route} from "react-router-dom";
-import Home from "../home/Home.jsx";
-import Movie from "../movie/Movie.jsx";
+import BreedSelector from "../breedSelector/breedSelector";
+import CatGallery from "../catGallery/catGallery";
 
 function App() {
-
   return (
-    <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies/:id" element={<Movie />} />
-    </Routes>
-  )
+    <main className="container">
+      <h1>Cat Breed Search</h1>
+      <BreedSelector />
+      <CatGallery />
+    </main>
+  );
 }
 
-export default App
+export default App;

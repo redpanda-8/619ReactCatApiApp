@@ -3,6 +3,9 @@
 
 import { useEffect, useState } from "react";
 
+//const apiKey = import.meta.env.VITE_API_KEY
+//const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${apiKey}`;
+
 const API_BASE = "https://api.thecatapi.com/v1";
 const API_KEY = import.meta.env.VITE_CAT_API_KEY;
 
@@ -10,7 +13,7 @@ const headers = {
   "x-api-key": API_KEY,
 };
 
-export const useCatApi = ({ selectedBreedId, limit = 6, page = 0 }) => {
+const catApi = ({ selectedBreedId, limit = 6, page = 0 }) => {
   const [breeds, setBreeds] = useState([]);
   const [images, setImages] = useState([]);
   const [isLoadingBreeds, setIsLoadingBreeds] = useState(true);
@@ -72,4 +75,5 @@ export const useCatApi = ({ selectedBreedId, limit = 6, page = 0 }) => {
     error,
     setImages, //resetui
   };
-};
+}
+export default catApi
