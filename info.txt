@@ -1,0 +1,42 @@
+Užduotis: Sukurkite aplikaciją kačių nuotraukų paieškai pagal veislę
+Tikslas: Naudojant React ir The Cat API, sukurkite aplikaciją, kurioje vartotojai galėtų pasirinkti kačių veislę iš sąrašo ir pamatyti atitinkamas nuotraukas.
+
+1.API susipažinimas:
+Užsiregistruokite The Cat API ir gaukite API raktą.
+
+Išanalizuokite API dokumentaciją, ypač šias užklausas:
+GET /breeds – gauti veislių sąrašą.
+GET /images/search – ieškoti nuotraukų pagal veislės ID.
+
+2.Projekto struktūra:Sukurkite projektą su create-react-app (arba kitu jūsų pasirinktu React įrankiu).
+Naudokit servisų atskyrimą ir context.
+
+3.Aplikacijos funkcionalumas:
+Sukurkite veislių pasirinkimo sąsają. Naudokite GET /breeds užklausą, kad užpildytumėte pasirinkimo laukelį (dropdown).
+Kai vartotojas pasirenka veislę, iškvieskite GET /images/search su pasirinktos veislės ID ir atvaizduokite gautas nuotraukas.
+Užtikrinkite, kad būtų matomas įkėlimo indikatorius (loading state), kol laukiama API atsakymo.
+
+4.Komponentai:
+Sukurkite komponentą BreedSelector, skirtą veislės pasirinkimui.
+Sukurkite komponentą CatGallery, kuris rodo kačių nuotraukas.
+Naudokite React context valdyti pasirinkimą ir gautus duomenis.
+
+5.Stilizacija:
+Pasirūpinkite pagrindine stilizacija, kad aplikacija būtų aiški ir patraukli (galima CSS ar biblioteką pvz bootstrap).
+
+6.Papildoma užduotis (nebūtina):
+Pridėkite galimybę peržiūrėti daugiau nuotraukų iš tos pačios veislės.
+Įdiekite klaidų valdymą (pvz., kai API užklausa nepavyksta).
+
+https://api.thecatapi.com/
+https://thecatapi.com/
+
+----------------------------------------------------------------------------------------------------------- DOGS API ---------------------------------
+https://dog.ceo/dog-api/documentation/
+https://dog.ceo/api/breed/hound/afghan/images
+
+npm create vite@latest cat-breed-search -- --template react
+cd cat-breed-search
+npm install
+npm i react-router-dom
+npm run dev
